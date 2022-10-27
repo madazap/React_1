@@ -1,8 +1,8 @@
-import CartWidget from "../cartWidget/CartWidget"
+import React from "react";
+import CartWidget from "../cartWidget/CartWidget";
 import "./navBar.css";
 
-
-const menus=["Colecciones","Accesorios","Sale","Materiales","Nosotros"];
+const menus = ["Categorias", "Accesorios", "Sale", "Nosotros"];
 
 export default function navBar() {
   return (
@@ -18,4 +18,3 @@ export default function navBar() {
     </div>
   );
 }
-

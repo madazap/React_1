@@ -1,0 +1,32 @@
+h2{
+    color: black;
+}
+
+h3{
+    color: black;
+}
+
+.prodImg{
+    width: 250px;
+    background-color: white;
+
+}
+
+.itemCard {
+    
+    width: 450px;
+    padding: 2rem;
+
+}
+
+.contenedor-item{
+
+    border: 2px black;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prod{
+    padding: 30px;
+}
