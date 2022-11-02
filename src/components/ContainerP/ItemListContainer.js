@@ -43,7 +43,7 @@ const ContainerP = () => {
             .map((product, i) => (
               <div key={i} className="contador">
                 <ItemCard
-                  key={product.id}
+                  id={product.id}
                   title={product.title}
                   price={product.price}
                   image={product.image}
@@ -57,7 +57,7 @@ const ContainerP = () => {
             .map((product, i) => (
               <div key={i} className="contador">
                 <ItemCard
-                  key={i}
+                  id={product.id}
                   title={product.title}
                   price={product.price}
                   image={product.image}
@@ -66,8 +66,6 @@ const ContainerP = () => {
                 <ItemCount stock={8} value={3} />
               </div>
             ))}
-
-     
     </div>
   );
 };
