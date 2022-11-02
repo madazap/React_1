@@ -214,7 +214,7 @@ const itemListFake = [
 
 export const GetObjectId = (idb)=> {
   // devolver producto dado el ID
-   const resultado =itemListFake.filter((e) => e.id == idb);
+   const resultado =itemListFake.find((e) => e.id == idb);
    return resultado;
 
 }

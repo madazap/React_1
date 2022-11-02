@@ -2,7 +2,7 @@ import React from "react";
 import CartWidget from "../cartWidget/CartWidget";
 import "./navBar.css";
 
-const menus = ["Categorias", "Accesorios", "Sale", "Nosotros"];
+const menus = ["Categorias", "Accesorios", "Sale"];
 
 export default function navBar() {
   return (
