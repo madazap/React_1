@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import NavBar from "../navBar/NavBar";
 import {useParams} from "react-router-dom";
 import {GetObjectId} from "./ItemList";
-import ItemCard from "./Item";
-
+import ItemOnly from "./itemOnly";
 
 
 function ItemDetail (){
 
+      
        const { idproducto } = useParams(); 
        const [detalle, setDetalle] = useState({});
        const [load, setLoad] =useState(true);
@@ -35,14 +35,13 @@ function ItemDetail (){
 
          
           return (
-            
-           
-
-            <div className="detalle-item">
-              {load ? (
-                <h3>Cargando Data</h3>
-              ) : (
-                  <ItemCard
+            <div className="paginaDetalle">
+              <NavBar />
+              <div className="detalle-item">
+                {load ? (
+                  <h3>Cargando Data</h3>
+                ) : (
+                  <ItemOnly
                     id={detalle.id}
                     title={detalle.title}
                     price={detalle.price}
@@ -50,8 +49,8 @@ function ItemDetail (){
                     category={detalle.category}
                     image={detalle.image}
                   />
-                
-              )}
+                )}
+              </div>
             </div>
           );
           
