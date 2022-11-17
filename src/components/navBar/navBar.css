@@ -3,7 +3,7 @@
 
     padding: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0px auto;
     max-width: 100%;    
     position: fixed;
@@ -30,12 +30,15 @@ ul li{
     color: white;
 }
 
-a:hover {
+.active:hover{
+
   color: gray;
   text-shadow: 3px;
-  transition: 0.5s; }
+  transition: 0.5s;
 
+}
 
-a:link, a:visited, a:active {
+.active:link, .active:visited, .active:active {
   text-decoration: none;
-  color: white; }
+  color: white;
+}

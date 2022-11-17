@@ -4,6 +4,7 @@ import NavBar from "../navBar/NavBar";
 import {useParams} from "react-router-dom";
 import {GetObjectId} from "./ItemList";
 import ItemOnly from "./itemOnly";
+import { getDoc, doc, getFirestore } from "firebase/firestore";
 
 
 function ItemDetail (){
@@ -12,28 +13,19 @@ function ItemDetail (){
        const { idproducto } = useParams(); 
        const [detalle, setDetalle] = useState({});
        const [load, setLoad] =useState(true);
-       const sirve = GetObjectId(idproducto);
-       
-        const getItem = () =>{
-          return new Promise ((resolve, reject)=>{
-              setTimeout(() => {
-                let item = GetObjectId(idproducto);
-                resolve(item);
-                setLoad(false);
-              }, 1500);
 
-          })
-        }
 
               useEffect(() => {
-                  async function fetchedItems(){
-                    const item=await getItem();
-                    setDetalle(item);
-                  }
-                fetchedItems();
+                  setLoad(false);
+                  const querydb = getFirestore();
+                  const queryDoc = doc(querydb,'Productos',idproducto);
+                  getDoc(queryDoc)
+                    .then( res => setDetalle({id:res.id, ...res.data()}))
               },[]);
 
-         
+     
+
+
           return (
             <div className="paginaDetalle">
               <NavBar />
@@ -41,39 +33,11 @@ function ItemDetail (){
                 {load ? (
                   <h3>Cargando Data</h3>
                 ) : (
-                  <ItemOnly
-                    id={detalle.id}
-                    title={detalle.title}
-                    price={detalle.price}
-                    description={detalle.description}
-                    category={detalle.category}
-                    image={detalle.image}
-                  />
+                  <ItemOnly detalle={detalle}/>
                 )}
               </div>
             </div>
           );
-          
-
-                 
-
-    
-        const {id,title,price,description, category,image} = GetObjectId(idproducto);
-
-       
-      //<div className="itemDetail">
-
-      //<img className="prodImg" alt={title} src={image} />
-      //<div className="ProdDescription">
-      //<h2> {title}</h2>
-      //<h2> {id}</h2>
-      //<h3> USD {price}</h3>
-      //<h3> Categoria {category}</h3>
-      //</div>
-
-      //</div>
-   
-      
 
 }
 

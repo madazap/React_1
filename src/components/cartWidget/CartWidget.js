@@ -1,13 +1,26 @@
 import React from "react";
-import logo from "./Logo.png";
+import cart from "./cart.png";
+import cartc from "./cart-content.png";
+import { useCartContext } from "../../Context/Context";
+import "./cartWidget.css";
+
+const CartWidget = () => {
 
 
-const cartWidget = () => {
+const {totalProducts} = useCartContext();
+
   return (
     <div className="icono">
-      <img src={logo}></img>
+      {totalProducts() === 0 ? (
+        <img src={cartc}></img>
+      ) : (
+        <div>
+          {totalProducts()}
+          <img src={cart}></img>
+        </div>
+      )}
     </div>
   );
 };
 
-export default cartWidget;
+export default CartWidget;

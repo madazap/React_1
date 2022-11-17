@@ -6,7 +6,7 @@ import {Link, useParams} from "react-router-dom";
 
 
 
-function ItemCard({id, title, price, description, category, image}) {
+function ItemCard({id, title,image, price, category}) {
 
    
   return (
@@ -14,8 +14,7 @@ function ItemCard({id, title, price, description, category, image}) {
       <Link to={`detalle/${id}`}>
         <img className="prodImg" alt={title} src={image} />
         <div className="ProdDescription">
-          <h2> {title}</h2>
-          <h2> {id}</h2>
+          <h3> {title}</h3>
           <h3> USD {price}</h3>
           <h3> Categoria {category}</h3>
         </div>

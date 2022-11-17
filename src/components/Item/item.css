@@ -30,3 +30,27 @@ h3{
 .prod{
     padding: 30px;
 }
+
+.retorno{
+    text-decoration: none;
+    color: black;
+}
+
+.itemCart{
+    display: flex;
+    border-bottom: 1px gray;
+    max-width: 500px;
+    margin: 1rem;
+    margin-top: 140px;
+}
+
+.itemCart img{
+    width: 250px;
+    
+    margin-right: 1rem;
+}
+
+.detalle-item{
+
+    padding-top: 120px;
+}
