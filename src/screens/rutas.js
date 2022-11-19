@@ -5,6 +5,7 @@ import Detalle from '../components/Item/itemDetail';
 import CartProvider from '../Context/Context';
 import NavBar from "../components/navBar/NavBar";
 import Cart from "../components/cart/index";
+import Confirm from "./confirm";
 
 const Rutas = () => {
  
@@ -16,11 +17,9 @@ const Rutas = () => {
             <Route path="/" element={<Home />} />
             <Route path="/category/:category" element={<Home />} />
             <Route path="/detalle/:idproducto" element={<Detalle />} />
-            <Route path="/cart" element={<Cart/>} />
-            <Route
-              path="/category/:category/detalle/:idproducto"
-              element={<Detalle />}
-            />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/category/:category/detalle/:idproducto" element={<Detalle />}/>
+            <Route path="/checkout" element={<Confirm />} />
             <Route path="*" element={<div> Pagina no existe </div>} />
           </Routes>
         </CartProvider>

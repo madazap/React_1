@@ -20,7 +20,6 @@ const ContainerP = () => {
      const querydb =getFirestore();
      const queryCollection= collection(querydb, 'Productos');
      
-
       if(category){
           const queryFilter = query(
             queryCollection,
@@ -34,16 +33,14 @@ const ContainerP = () => {
 
       }
       else{
-        
         getDocs(queryCollection).then((res) =>
           setProducts(
             res.docs.map((product) => ({ id: product.id, ...product.data() }))
           )
         );
-
       }
       
-   }, []);
+   }, [category]);
 
   return (
     <div className="contenedor">

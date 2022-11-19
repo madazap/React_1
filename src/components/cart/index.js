@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useCartContext } from "../../Context/Context";
 import ItemCard from "../Item/Item";
 import ItemCart from "../Item/itemCart";
 import empty from "./Empty cart.png";
 import "../cart/cart.css";
+import CheckOut from "./CheckOut";
 
 const Cart = () =>{
 
     const {cart, totalPrice}=useCartContext();
-
+    const [check, setCheck]=useState(false);
+    
+    const aak = () => {
+         
+         setCheck(true);
+    }; 
 
         if(cart.length ===0){
 
@@ -37,10 +43,14 @@ const Cart = () =>{
             ))}
 
             <p>Total de tu compra {totalPrice()}</p>
+            {check ? 
+            <CheckOut/>
+            : <button onClick={aak}>Finaliza tu compra</button>}
+            
           </>
         );
         
-        
+       
 
 
 }
