@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { Route } from 'react-router-dom';
 import Rutas from '../src/screens/rutas';
 import './firebase/config';
 

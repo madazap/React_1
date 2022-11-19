@@ -18,17 +18,29 @@ const {addProduct}=useCartContext();
   };
 
   return (
-    <div className="itemCardO">
-      <Link to={`detalle/${detalle.id}`}>
-        <img className="prodImg" alt={detalle.title} src={detalle.image} />
-        <div className="ProdDescription">
-          <h2> {detalle.title}</h2>
-          <h3> USD {detalle.price}</h3>
-          <h3> {detalle.description}</h3>
+    <div className="flex justify-center">
+      <div className="flex flex-col  md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+        <img
+          className=" w-full h-98 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
+          src={detalle.image}
+          alt={detalle.title}
+        />
+        <div className="p-6 flex flex-col justify-start">
+          <h5 className="text-black-900 text-xl font-medium mb-2">
+            {detalle.title}
+          </h5>
+          <p className="text-gray-700 text-base mb-4">{detalle.description}</p>
+          <p className="text-red-700 text-s">USD {detalle.price}</p>
+
+          {GoToCart ? (
+            <Link className="text-violet-700 font-bold text-2xl " to="/cart">
+              Terminar compra
+            </Link>
+          ) : (
+            <ItemCount stock={8} value={1} addA={addA} />
+          )}
         </div>
-      </Link>
-      {GoToCart ? <Link className="retorno" to='/cart'>Terminar compra</Link> : 
-                      <ItemCount stock={8} value={1} addA={addA} />}
+      </div>
     </div>
   );
 }

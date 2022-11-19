@@ -6,7 +6,7 @@ import CartProvider from '../Context/Context';
 import NavBar from "../components/navBar/NavBar";
 import Cart from "../components/cart/index";
 import Confirm from "./confirm";
-
+import Notfound from "../screens/404";
 const Rutas = () => {
  
     return (
@@ -20,7 +20,7 @@ const Rutas = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/category/:category/detalle/:idproducto" element={<Detalle />}/>
             <Route path="/checkout" element={<Confirm />} />
-            <Route path="*" element={<div> Pagina no existe </div>} />
+            <Route path="*" element={<Notfound/>} />
           </Routes>
         </CartProvider>
       </BrowserRouter>

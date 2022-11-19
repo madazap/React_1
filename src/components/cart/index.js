@@ -25,12 +25,13 @@ const Cart = () =>{
                 <img src={empty} alt="Carrito vacio"></img>
                 Tu carrito esta vacio
                 <NavLink className="vacio" to={"/"}>
-                  <button> Continuar comprando </button>
+                  <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    {" "}
+                    Continuar comprando{" "}
+                  </button>
                 </NavLink>
               </div>
-            );
-            
-            
+            ); 
             
         }
         
@@ -43,10 +44,16 @@ const Cart = () =>{
             ))}
 
             <p>Total de tu compra {totalPrice()}</p>
-            {check ? 
-            <CheckOut/>
-            : <button onClick={aak}>Finaliza tu compra</button>}
-            
+            {check ? (
+              <CheckOut />
+            ) : (
+              <button
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onClick={aak}
+              >
+                Finaliza tu compra
+              </button>
+            )}
           </>
         );
         

@@ -52,52 +52,73 @@ const Send = (id)=>{
 
 
 return (
-  <div className="formCheck">
+  <div className="formCheck pt-6 ">
     <form
       onSubmit={(ev) => {
         ev.preventDefault();
         check();
       }}
     >
-      <label>Nombre</label>
+      <label className="block text-black-500 font-semi-bold md:text-left mb-1 md:mb-0 pr-4">
+        Nombre
+      </label>
       <input
+        className="bg-blue-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
         type="text"
         name="nombre"
         autoComplete="off"
         value={nombre}
         onChange={(e) => setNombre(e.target.value)}
       ></input>
-      <label>E Mail</label>
+      <label className="block text-black-500 font-semi-bold md:text-left mb-1 md:mb-0 pr-4">
+        E Mail
+      </label>
       <input
+        className="bg-blue-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
         type="email"
         name="mail1"
         autoComplete="off"
         value={email1}
         onChange={(e) => setEmail1(e.target.value)}
       ></input>
-      <label>Confirma tu E Mail</label>
+      <label className="block text-black-500 font-semi-bold md:text-left mb-1 md:mb-0 pr-4">
+        Confirma tu E Mail
+      </label>
       <input
+        className="bg-blue-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
         type="email"
         name="mail2"
         autoComplete="off"
         value={email2}
         onChange={(e) => setEmail2(e.target.value)}
       ></input>
-      <label>Direccion de envio</label>
+      <label className="block text-black-500 font-semi-bold md:text-left mb-1 md:mb-0 pr-4">
+        Direccion de envio
+      </label>
       <input
+        className="bg-blue-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
         type="text"
         name="direccion"
         autoComplete="off"
         value={direccion}
         onChange={(e) => setDireccion(e.target.value)}
       ></input>
-      <p className="ErrorMessage">{errorMessage}</p>
+      <p className="text-rose-600 font-sans	text-lg ">{errorMessage}</p>
       {errorMessage ? (
-        <button type="submit" disabled="disabled">
+        <button
+          className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          type="submit"
+          disabled="disabled"
+        >
           Confirmar pedido
         </button>
       ) : (
-        <button type="submit">Confirmar pedido</button>
+        <button
+          className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          type="submit"
+        >
+          Confirmar pedido
+        </button>
       )}
     </form>
   </div>

@@ -19,8 +19,11 @@ Los componentes estan organizados bajo la jerarquia
 
 Los prodcutos asi como sus imagenes y descripciones estan en ingles por que fueron tomados en principio via API de una API publica de consulta de items https://fakestoreapi.com/ 
 
+### Componente ItemList
 
+El archivo ItemList muestra la base completa de productos que se trato localmente como objeto durante el proceso de pruebas, se eliminaron los hooks de consulta asincronica pero se dejo la lista en caso de evaluar tambien la consulta local. 
 
+Lamento la parte grafica, trate de aprender Tailwind sobre CSS puro ara mejorar le entrega e hice un peor trabajo, sigo trabajando en la entrega grafica, de parte de la funcionalidad esta completa. 
 
 
 

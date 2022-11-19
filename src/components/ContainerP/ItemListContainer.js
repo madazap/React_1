@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./containerP.css";
 import ItemCard from "../Item/Item";
-import itemListFake from "../Item/ItemList";
 import { useParams } from "react-router-dom";
 import {getFirestore, collection, getDocs, query, where} from 'firebase/firestore';
 
@@ -43,11 +42,9 @@ const ContainerP = () => {
    }, [category]);
 
   return (
-    <div className="contenedor">
-      <h1>Productos {products.category} </h1>
-
+    <div className=" mt-32 h-56 max-h-full grid grid-cols-2 gap-4 grid h-screen place-items-center">
       {products.map((prod, i) => (
-        <div key={i} className="vitrina">
+        <div key={i}>
           <ItemCard
             id={prod.id}
             title={prod.title}

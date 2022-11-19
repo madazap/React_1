@@ -27,14 +27,10 @@ function ItemDetail (){
 
 
           return (
-            <div className="paginaDetalle">
+            <div className="pt-28 ">
               <NavBar />
-              <div className="detalle-item">
-                {load ? (
-                  <h3>Cargando Data</h3>
-                ) : (
-                  <ItemOnly detalle={detalle}/>
-                )}
+              <div>
+                {load ? <h3>Cargando Data</h3> : <ItemOnly detalle={detalle} />}
               </div>
             </div>
           );

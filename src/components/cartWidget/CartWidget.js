@@ -10,11 +10,11 @@ const CartWidget = () => {
 const {totalProducts} = useCartContext();
 
   return (
-    <div className="icono">
+    <div className="float-right">
       {totalProducts() === 0 ? (
         <img src={cartc}></img>
       ) : (
-        <div>
+        <div className="float-right text-red-600 ">
           {totalProducts()}
           <img src={cart}></img>
         </div>
